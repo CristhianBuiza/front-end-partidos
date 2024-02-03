@@ -34,14 +34,14 @@ const Carousel: React.FC<CarouselProps> = async ({ filter, matches }) => {
 
   return (
     <>
-      {filter === "will-play" && filteredMatches.length > 0 && (
+      {filter === "will-play" && filteredMatches?.length > 0 && (
         <>
           <div className="border-b-4 border-blue-700 pb-3 mb-5">
             <h2 className="text-3xl font-bold ">Partidos por jugarse</h2>
           </div>
         </>
       )}
-      {filter === "live" && filteredMatches.length > 0 && (
+      {filter === "live" && filteredMatches?.length > 0 && (
         <>
           <div className="border-b-4 border-red-500 pb-3 mb-5 flex justify-between">
             <h2 className="text-3xl font-bold ">Partidos en vivo</h2>
