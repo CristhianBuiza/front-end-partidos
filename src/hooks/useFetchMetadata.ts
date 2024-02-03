@@ -1,8 +1,15 @@
-// hooks/useFetchMetadata.ts
 import { useState, useEffect } from "react";
 
+// Define an interface for your metadata
+interface Metadata {
+  title: string;
+  description: string;
+  // Add other properties as needed
+}
+
 const useFetchMetadata = (url: string) => {
-  const [metadata, setMetadata] = useState(null);
+  // Initialize metadata with a specific type
+  const [metadata, setMetadata] = useState<Metadata | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -13,7 +20,7 @@ const useFetchMetadata = (url: string) => {
         setMetadata({
           title: data.data.attributes.SEO.metaTitle,
           description: data.data.attributes.SEO.metaDescription,
-          // ...other metadata
+          // Include other metadata properties as needed
         });
       } catch (error) {
         console.error("Failed to fetch metadata:", error);

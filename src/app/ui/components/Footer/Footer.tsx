@@ -11,8 +11,12 @@ import {
 import { useRouter } from "next/router";
 
 const Footer = () => {
+  const currentUrl = "";
   const asPath = usePathname();
-  const currentUrl = `${window.location.origin}${asPath}`;
+
+  if (typeof window !== "undefined") {
+    const currentUrl = `${window.location.origin}${asPath}`;
+  }
 
   const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
     currentUrl
