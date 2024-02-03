@@ -55,7 +55,7 @@ const Carousel: React.FC<CarouselProps> = async ({ filter, matches }) => {
         </>
       )}
       <div className="flex justify-between flex-wrap ">
-        {filteredMatches.map((match) => (
+        {filteredMatches?.map((match) => (
           <CardHome
             key={match.id}
             title={match.attributes.partido}
