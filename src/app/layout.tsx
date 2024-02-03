@@ -22,10 +22,10 @@ export async function generateMetadata({
   const { data }: RootObject = await fetch(url).then((res) => res.json());
 
   return {
-    title: data.attributes.SEO.metaTitle,
-    description: data.attributes.SEO.metaDescription,
-    keywords: data.attributes.SEO.keywords,
-    robots: data.attributes.SEO.metaRobots,
+    title: data?.attributes?.SEO?.metaTitle,
+    description: data?.attributes?.SEO?.metaDescription,
+    keywords: data?.attributes?.SEO?.keywords,
+    robots: data?.attributes?.SEO?.metaRobots,
   };
 }
 

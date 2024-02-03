@@ -1,7 +1,19 @@
 "use client";
 import React, { useState } from "react";
+import { Embed } from "../Carousel/helpers/embed";
 
-const Reproductor = ({ match, ads }) => {
+interface ReproductorProps {
+  match: Embed;
+  ads: {
+    data: {
+      attributes: {
+        publicidad_derecha: string;
+      };
+    };
+  };
+}
+
+const Reproductor: React.FC<ReproductorProps> = ({ match, ads }) => {
   // Estado para almacenar el src actual del iframe y un contador para recargas
   const [iframeSrc, setIframeSrc] = useState(
     match?.data[0].attributes.opciones_video.video[0].url + "?autoplay=1"

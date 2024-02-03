@@ -12,7 +12,9 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = async ({ filter, matches }) => {
   let filterP;
 
-  const filterMatches = (match) => {
+  const filterMatches = (match: {
+    attributes: { datetime: string | number | Date };
+  }) => {
     const matchDate = new Date(match.attributes.datetime);
     const currentDate = new Date();
 

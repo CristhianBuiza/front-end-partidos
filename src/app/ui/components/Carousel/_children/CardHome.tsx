@@ -57,17 +57,20 @@ const CardHome = (props: CardHomeProps) => {
                     layout="fill" // Esto hará que la imagen llene el div
                     objectFit="cover" // Esto asegura que la imagen cubra todo el espacio sin distorsionarse
                   />
-                  <Image
-                    style={{
-                      zIndex: 2,
-                      position: "absolute",
-                      top: "35%",
-                      right: "68% ",
-                    }}
-                    width={70}
-                    height={70}
-                    src={local}
-                  ></Image>
+                  {local && (
+                    <Image
+                      style={{
+                        zIndex: 2,
+                        position: "absolute",
+                        top: "35%",
+                        right: "68% ",
+                      }}
+                      width={70}
+                      height={70}
+                      src={local}
+                      alt={"local image"}
+                    ></Image>
+                  )}
                   <img
                     style={{
                       zIndex: 2,
@@ -81,10 +84,11 @@ const CardHome = (props: CardHomeProps) => {
                   ></img>
                 </>
               ) : (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={fullImage}
                   alt="Picture of the author"
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
               )}
             </>

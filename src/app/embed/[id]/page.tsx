@@ -1,10 +1,18 @@
 import Head from "next/head";
+import { NextPage } from "next";
 import { redirect } from "next/navigation";
 import { API_URL } from "@/app/config";
 import { Embed } from "@/app/ui/components/Carousel/helpers/embed";
 import Reproductor from "@/app/ui/components/Video/Reproductor";
+import { Calendar } from "@/app/ui/components/Carousel/helpers/types";
 
-async function getMatchDetail({ id }): any {
+interface EmbedPageProps {
+  params: {
+    id: string;
+  };
+}
+
+async function getMatchDetail({ id }: { id: string }) {
   const response = await fetch(
     `${API_URL}/api/calendarios?filters[opciones_video][id_video][$eq]=${id}&populate[opciones_video][populate]=video`
   );
@@ -18,9 +26,9 @@ async function getADS() {
   return data;
 }
 
-const EmbedPage = async ({ params }) => {
+const EmbedPage: NextPage<EmbedPageProps> = async ({ params }) => {
   const { id } = params;
-  const match: Embed = await getMatchDetail({ id });
+  const match: Calendar = await getMatchDetail({ id });
   const ads = await getADS();
   if (!match || match?.data.length === 0) {
     redirect("/404");
