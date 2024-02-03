@@ -4,7 +4,6 @@ import { redirect } from "next/navigation";
 import { API_URL } from "@/app/config";
 import { Embed } from "@/app/ui/components/Carousel/helpers/embed";
 import Reproductor from "@/app/ui/components/Video/Reproductor";
-import { Calendar } from "@/app/ui/components/Carousel/helpers/types";
 
 interface EmbedPageProps {
   params: {
@@ -28,9 +27,9 @@ async function getADS() {
 
 const EmbedPage: NextPage<EmbedPageProps> = async ({ params }) => {
   const { id } = params;
-  const match: Calendar = await getMatchDetail({ id });
+  const match: Embed = await getMatchDetail({ id });
   const ads = await getADS();
-  if (!match || match?.data.length === 0) {
+  if (!match || match?.data?.length === 0) {
     redirect("/404");
   }
   return (
