@@ -16,13 +16,13 @@ interface ReproductorProps {
 const Reproductor: React.FC<ReproductorProps> = ({ match, ads }) => {
   // Estado para almacenar el src actual del iframe y un contador para recargas
   const [iframeSrc, setIframeSrc] = useState(
-    match?.data[0].attributes.opciones_video.video[0].url + "?autoplay=1"
+    match?.data[0].attributes.opciones_video.video[0].url
   );
   const [reloadCounter, setReloadCounter] = useState(0);
 
   // Función para cambiar el src del iframe basado en la opción seleccionada
   const changeVideoSource = (newSrc: string) => {
-    setIframeSrc(newSrc + "?autoplay=1");
+    setIframeSrc(newSrc);
   };
 
   // Función para recargar el iframe
@@ -41,7 +41,7 @@ const Reproductor: React.FC<ReproductorProps> = ({ match, ads }) => {
           height="410"
           src={iframeSrc}
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; autoplay"
+          allow="autoplay; encrypted-media"
           allowFullScreen
         ></iframe>
       </div>

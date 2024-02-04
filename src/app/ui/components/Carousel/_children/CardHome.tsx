@@ -39,10 +39,7 @@ const CardHome = (props: CardHomeProps) => {
           {isHovered ? (
             <iframe
               title="Video title"
-              src={
-                link ||
-                "https://absimile.com/cl.html?url=aHR0cHM6Ly9hcmxvY2FsbGl2ZWNoYW5uZWxzZGFzaC5sY2RuLmNsYXJvdHYuY29tLmFyL0NvbnRlbnQvREFTSF9EQVNIX0ZLL0xpdmUvY2hhbm5lbChGT1hfU1BPUlRTXzMpL21hc3Rlci5tcGQ=&k1=MDdkNmRlMDk2M2ZhZjk5MWVhZGRlNTdjOTA2MDUzNTA=&k2=MjE0ZjhjMDgyZGZiOGJhMzBjMjhkMTAzNGY1YzFlYjI=&aut=true&lang=0"
-              }
+              src={link}
               frameBorder="0"
               allow="autoplay; encrypted-media"
               className="w-full h-full"
