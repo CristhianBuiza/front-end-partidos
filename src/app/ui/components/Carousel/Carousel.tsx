@@ -37,14 +37,14 @@ const Carousel: React.FC<CarouselProps> = async ({ filter, matches }) => {
       {filter === "will-play" && filteredMatches?.length > 0 && (
         <>
           <div className="border-b-4 border-blue-700 pb-3 mb-5">
-            <h2 className="text-3xl font-bold ">Partidos por jugarse</h2>
+            <h2 className="text-2xl font-bold ">Partidos por jugarse</h2>
           </div>
         </>
       )}
       {filter === "live" && filteredMatches?.length > 0 && (
         <>
           <div className="border-b-4 border-red-500 pb-3 mb-5 flex justify-between">
-            <h2 className="text-3xl font-bold ">Partidos en vivo</h2>
+            <h2 className="text-2xl font-bold ">Partidos en vivo</h2>
             <button
               className="bg-red-500 text-white font-bold py-2 px-4 rounded"
               disabled // Esto hace que el botón sea no clicleable

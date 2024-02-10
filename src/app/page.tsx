@@ -26,7 +26,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col px-5 md:px-44 pt-10 ">
-      <h1 className="text-2xl font-bold mb-10 uppercase">
+      <h1 className="text-xl font-bold mb-10 uppercase">
         Calendario de Partidos de hoy - {todayDate}
       </h1>
       <div>

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["admin.futbolbingo.com"],
+    domains: ["admin.liga1maxonline.com"],
   },
 };
 

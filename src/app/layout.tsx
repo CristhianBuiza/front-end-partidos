@@ -50,7 +50,7 @@ export default function RootLayout({
           <div>
             <a 
               href="https://t.me/+eVYMuUgvSpBjOGU5" 
-              className={`${fonts.roboto.className} text-xl mr-3`}
+              className={`${fonts.roboto.className} text-lg mr-3`}
               target="_blank"
               rel="noopener noreferrer">
               Telegram
