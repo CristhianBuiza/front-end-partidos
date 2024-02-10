@@ -25,7 +25,7 @@ export async function generateMetadata({
     title: data?.attributes?.SEO?.metaTitle,
     description: data?.attributes?.SEO?.metaDescription,
     keywords: data?.attributes?.SEO?.keywords,
-    robots: data?.attributes?.SEO?.metaRobots,
+
   };
 }
 
@@ -44,14 +44,18 @@ export default function RootLayout({
             href="/"
             className={`${fonts.montserrat.className}  font-bold  !italic container  px-4 py-2 font-bold text-2xl`}
           >
-            MR GAMING STREAM
+            LIGA1MAX
           </Link>
           {/* !important: href para redireccionar a otras paginas Link para la pagina  */}
           <div>
-            <a href="/" className={` ${fonts.roboto.className} text-xl`}>
-              OTRA PAGINA
+            <a 
+              href="https://t.me/+eVYMuUgvSpBjOGU5" 
+              className={`${fonts.roboto.className} text-xl mr-3`}
+              target="_blank"
+              rel="noopener noreferrer">
+              Telegram
             </a>
-          </div>
+                      </div>
         </header>
         {children}
         <Footer />

@@ -4,7 +4,7 @@ import { Calendar } from "./ui/components/Carousel/helpers/types.js";
 
 async function getMatches(): Promise<Calendar> {
   const response = await fetch(
-    `${API_URL}/api/calendarios?populate[opciones_video][populate]=*&populate[opciones_video][video][canal][populate]=*&populate[equipo_a]=*&populate[equipo_b]=*&populate[imagen_equipos]=*fullImage.&populate[opciones_video][populate]=video&populate[opciones_video][populate][video][populate]=canal`
+    `${API_URL}/api/calendarios?populate[opciones_video][populate]=*&populate[opciones_video][video][canal][populate]=*&populate[equipo_a]=*&populate[equipo_b]=*&populate[imagen_equipos]=*fullImage.&populate[opciones_video][populate]=video&populate[opciones_video][populate][video][populate]=canal`,{ next: { revalidate: 60 } }
   );
   const data = await response.json();
   return data;

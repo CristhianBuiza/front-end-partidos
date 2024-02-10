@@ -35,7 +35,7 @@ const EmbedPage: NextPage<EmbedPageProps> = async ({ params }) => {
   return (
     <div>
       <Head>
-        <meta name="robots" content="noindex" />
+        <meta name="robots" content="noindex,nofollow" />
       </Head>
       <div
         className="mt-5 md:mt-0  mx-4 block md:hidden"
@@ -47,7 +47,7 @@ const EmbedPage: NextPage<EmbedPageProps> = async ({ params }) => {
       <div
         className="  block md:hidden mx-4"
         dangerouslySetInnerHTML={{
-          __html: ads?.data?.attributes?.publicidad_arriba_mobile,
+          __html: ads?.data?.attributes?.publicidad_abajo_mobile,
         }}
       />
     </div>
