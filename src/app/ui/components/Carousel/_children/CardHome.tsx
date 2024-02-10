@@ -23,7 +23,6 @@ const CardHome = (props: CardHomeProps) => {
     const day = date.getDate();
     return `${day} a las ${hours}:${minutes}`;
   };
-  console.log("fullImage", fullImage);
   return (
     <Link href={`/embed/${redirect}`}>
       <div
@@ -42,7 +41,7 @@ const CardHome = (props: CardHomeProps) => {
               src={link}
               frameBorder="0"
               allow="autoplay; encrypted-media"
-              className="w-full h-full"
+              className="w-full h-full pointer-events-none"
             />
           ) : (
             <>
@@ -96,7 +95,7 @@ const CardHome = (props: CardHomeProps) => {
             {title || "Sport Boys vs. Cusco"}
           </p>
           <p>
-            Fecha:{" "}
+            Fecha:
             <time className=""> Día {datetime && convertTime(datetime)}</time>
           </p>
         </div>

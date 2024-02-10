@@ -13,7 +13,7 @@ interface EmbedPageProps {
 
 async function getMatchDetail({ id }: { id: string }) {
   const response = await fetch(
-    `${API_URL}/api/calendarios?filters[opciones_video][id_video][$eq]=${id}&populate[opciones_video][populate]=video`
+    `${API_URL}/api/calendarios?filters[opciones_video][id_video][$eq]=${id}&populate[opciones_video][populate][video][populate]=canal`
   );
   const data = await response.json();
   return data;

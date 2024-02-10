@@ -29,20 +29,37 @@ export interface Data {
 }
 
 export interface DataAttributes {
-  alternativeText: null;
-  caption: null;
+  alternativeText?: null;
+  caption?: null;
   createdAt: Date;
+  ext?: string;
+  formats?: Formats;
+  hash?: string;
+  height?: number;
+  mime?: string;
+  name?: string;
+  previewUrl?: null;
+  provider?: string;
+  provider_metadata?: null;
+  size?: number;
+  titulo?: string;
+  updatedAt: Date;
+  url: string;
+  width?: number;
+}
+
+export interface Formats {
+  thumbnail: Thumbnail;
+}
+
+export interface Thumbnail {
   ext: string;
-  formats: null;
   hash: string;
   height: number;
   mime: string;
   name: string;
-  previewUrl: null;
-  provider: string;
-  provider_metadata: null;
+  path: null;
   size: number;
-  updatedAt: Date;
   url: string;
   width: number;
 }
@@ -55,6 +72,7 @@ export interface OpcionesVideo {
 }
 
 export interface Video {
+  canal: EquipoA;
   id: number;
   url: string;
 }

@@ -4,11 +4,11 @@ export interface Embed {
 }
 
 export interface Datum {
-  attributes: Attributes;
+  attributes: DatumAttributes;
   id: number;
 }
 
-export interface Attributes {
+export interface DatumAttributes {
   createdAt: Date;
   datetime: Date;
   opciones_video: OpcionesVideo;
@@ -24,7 +24,24 @@ export interface OpcionesVideo {
 }
 
 export interface Video {
+  canal: Canal;
   id: number;
+  url: null;
+}
+
+export interface Canal {
+  data: Data;
+}
+
+export interface Data {
+  attributes: DataAttributes;
+  id: number;
+}
+
+export interface DataAttributes {
+  createdAt: Date;
+  titulo: string;
+  updatedAt: Date;
   url: string;
 }
 

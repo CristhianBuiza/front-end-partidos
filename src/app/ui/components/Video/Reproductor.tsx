@@ -16,7 +16,9 @@ interface ReproductorProps {
 const Reproductor: React.FC<ReproductorProps> = ({ match, ads }) => {
   // Estado para almacenar el src actual del iframe y un contador para recargas
   const [iframeSrc, setIframeSrc] = useState(
-    match?.data[0].attributes.opciones_video.video[0].url
+    match?.data[0]?.attributes?.opciones_video?.video[0]?.url ||
+      match?.data[0].attributes.opciones_video.video[0].canal?.data?.attributes
+        ?.url
   );
   const [reloadCounter, setReloadCounter] = useState(0);
 
@@ -51,7 +53,11 @@ const Reproductor: React.FC<ReproductorProps> = ({ match, ads }) => {
             {match?.data[0].attributes.opciones_video.video.map((video, i) => (
               <button
                 key={video.id}
-                onClick={() => changeVideoSource(video.url)}
+                onClick={() =>
+                  changeVideoSource(
+                    video?.url || video?.canal?.data?.attributes?.url
+                  )
+                }
                 className="font-bold py-2 px-4 rounded bg-slate-900 hover:bg-slate-800 mr-2"
               >
                 Opción {i + 1}

@@ -67,7 +67,11 @@ const Carousel: React.FC<CarouselProps> = async ({ filter, matches }) => {
                 : ""
             }`}
             datetime={match?.attributes?.datetime}
-            link={match?.attributes?.opciones_video?.video[0]?.url}
+            link={
+              match?.attributes?.opciones_video?.video[0]?.url ||
+              match?.attributes?.opciones_video?.video[0]?.canal?.data
+                ?.attributes?.url
+            }
             redirect={match?.attributes?.opciones_video?.id_video}
           />
         ))}
