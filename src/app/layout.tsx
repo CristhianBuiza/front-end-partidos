@@ -6,6 +6,7 @@ import { Params } from "next/dist/shared/lib/router/utils/route-matcher";
 import { API_URL } from "./config";
 import { RootObject, SEO } from "./ui/components/Carousel/helpers/seo";
 import Footer from "./ui/components/Footer/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 /**
  * The function `generateMetadata` fetches data from an API and returns metadata for a webpage.
@@ -25,7 +26,6 @@ export async function generateMetadata({
     title: data?.attributes?.SEO?.metaTitle,
     description: data?.attributes?.SEO?.metaDescription,
     keywords: data?.attributes?.SEO?.keywords,
-
   };
 }
 
@@ -36,6 +36,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
+      <GoogleAnalytics gaId="G-G058B5NSQ9" />
       <body
         className={`${fonts.titillium_web.className} antialiased bg-secondary-color text-white  `}
       >
@@ -48,14 +49,15 @@ export default function RootLayout({
           </Link>
           {/* !important: href para redireccionar a otras paginas Link para la pagina  */}
           <div>
-            <a 
-              href="https://t.me/+eVYMuUgvSpBjOGU5" 
+            <a
+              href="https://t.me/+eVYMuUgvSpBjOGU5"
               className={`${fonts.roboto.className} text-lg mr-3`}
               target="_blank"
-              rel="noopener noreferrer">
+              rel="noopener noreferrer"
+            >
               Telegram
             </a>
-                      </div>
+          </div>
         </header>
         {children}
         <Footer />
