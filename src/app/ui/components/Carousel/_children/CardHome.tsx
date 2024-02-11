@@ -19,11 +19,10 @@ const CardHome = (props: CardHomeProps) => {
   const convertTime = (time: Date) => {
     const date = new Date(time);
     const hours = date.getHours();
-    let minutes = date.getMinutes();
+    const minutes = date.getMinutes();
     const day = date.getDate();
-    minutes = minutes < 10 ? `0${minutes}` : minutes.toString();
 
-    return `${day} a las ${hours}:${minutes}`;
+    return `${day} a las ${hours}:${minutes < 10 ? `0${minutes}` : minutes}`;
   };
   return (
     <Link href={`/embed/${redirect}`}>
